@@ -95,12 +95,14 @@ document.querySelector('#book-form').addEventListener('submit',(e)=>{
     {
         UI.showAlert('Please fill in all fields','danger');
     }
+    else{
     //Instantiate book
     const book = new Book(title,author,isbn);
     UI.addBookToList(book);
     Store.addBook(book);
     UI.showAlert('Book Added','success');
     UI.clearFields();
+    }
 })
 
 // Event: Remove a Book
